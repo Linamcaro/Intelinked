@@ -13,7 +13,6 @@ public class Objective : MonoBehaviour
 
 
     //If both character triggers the objective is complete
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == topPlayerTag)
