@@ -16,6 +16,22 @@ public class CharacterMovement : MonoBehaviour
     private int force = 0;
     private Rigidbody2D playerRB;
     private PlayerStatus status;
+    private PlayerInputs playerInput;
+
+    private void Awake()
+    {
+        playerInput = new PlayerInputs();
+    }
+
+    private void OnEnable()
+    {
+        playerInput.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerInput.Disable();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -36,17 +52,18 @@ public class CharacterMovement : MonoBehaviour
     }
 
     private void Movement(){
-        float dirX= Input.GetAxis("Horizontal");
+        Vector2 movementInput = playerInput.PlayerMain.Movement.ReadValue<Vector2>();
+        float dirX= movementInput.x;
         
         if(dirX!=0){
-            Vector3 movementStepX = new Vector3(1,0,0) * speed * Time.fixedDeltaTime* dirX;
-            transform.position += movementStepX;
+            Vector2 movementStepX = new Vector2(dirX * speed,0);
+            playerRB.velocity = movementStepX;
         }
     }
 
     private void Jump(){
         PlayerStatus.Status currentStatus = status.getStatus();
-        if (Input.GetKeyDown("space") && currentStatus == PlayerStatus.Status.ground){
+        if (playerInput.PlayerMain.Jump.triggered ){
             playerRB.AddForce(Vector2.up * force,ForceMode2D.Impulse);
             status.setStatus(PlayerStatus.Status.jump);
         }
