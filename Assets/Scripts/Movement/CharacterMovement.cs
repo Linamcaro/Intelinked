@@ -11,9 +11,9 @@ using UnityEngine.InputSystem;
 public class CharacterMovement : MonoBehaviour
 {
     [SerializeField]
-    private float speed=1;
+    private float speed;
     [SerializeField]
-    private int force = 0;
+    private int force;
     private Rigidbody2D playerRB;
     private PlayerStatus status;
     private PlayerInputs playerInput;
@@ -63,8 +63,10 @@ public class CharacterMovement : MonoBehaviour
 
     private void Jump(){
         PlayerStatus.Status currentStatus = status.getStatus();
-        if (playerInput.PlayerMain.Jump.triggered ){
-            playerRB.AddForce(Vector2.up * force,ForceMode2D.Impulse);
+        if (playerInput.PlayerMain.Jump.triggered && currentStatus == PlayerStatus.Status.ground)
+        {
+            //playerRB.velocity = new Vector2(playerRB.velocity.x,0f);
+            playerRB.AddForce(new Vector2(0,force), ForceMode2D.Impulse);
             status.setStatus(PlayerStatus.Status.jump);
         }
     }
