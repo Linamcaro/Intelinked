@@ -65,7 +65,7 @@ public class CharacterMovement : MonoBehaviour
         PlayerStatus.Status currentStatus = status.getStatus();
         if (playerInput.PlayerMain.Jump.triggered && currentStatus == PlayerStatus.Status.ground)
         {
-            //playerRB.velocity = new Vector2(playerRB.velocity.x,0f);
+            playerRB.velocity = new Vector2(playerRB.velocity.x,0f);
             playerRB.AddForce(new Vector2(0,force), ForceMode2D.Impulse);
             status.setStatus(PlayerStatus.Status.jump);
         }
