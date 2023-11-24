@@ -24,6 +24,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    // Load level by index
     public void LoadNextLevel()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;

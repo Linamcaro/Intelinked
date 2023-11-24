@@ -56,7 +56,7 @@ public class CharacterMovement : MonoBehaviour
         float dirX= movementInput.x;
         
         if(dirX!=0){
-            Vector2 movementStepX = new Vector2(dirX * speed,0);
+            Vector2 movementStepX = new Vector2(dirX * speed,playerRB.velocity.y);
             playerRB.velocity = movementStepX;
         }
     }

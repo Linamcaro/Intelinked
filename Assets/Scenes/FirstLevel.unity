@@ -447,7 +447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04f222c4051208c40aeb8c63083e24c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
   force: 3
 --- !u!114 &319731952
 MonoBehaviour:
@@ -1027,7 +1027,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8910499709877347991, guid: d865b65a933d0f54b9328558bd52726c, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1597,7 +1597,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8910499709877347991, guid: d865b65a933d0f54b9328558bd52726c, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2557,7 +2557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04f222c4051208c40aeb8c63083e24c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 2
   force: -3
 --- !u!114 &2044283791
 MonoBehaviour:
