@@ -55,10 +55,13 @@ public class CharacterMovement : MonoBehaviour
         Vector2 movementInput = playerInput.PlayerMain.Movement.ReadValue<Vector2>();
         float dirX= movementInput.x;
         
-        if(dirX!=0){
-            Vector2 movementStepX = new Vector2(dirX * speed,playerRB.velocity.y);
-            playerRB.velocity = movementStepX;
+        if(dirX == 0){
+            dirX = 0; 
         }
+       
+
+        Vector2 movementStepX = new Vector2(dirX * speed, playerRB.velocity.y);
+        playerRB.velocity = movementStepX;
     }
 
     private void Jump(){
