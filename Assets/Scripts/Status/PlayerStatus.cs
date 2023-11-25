@@ -7,10 +7,13 @@ public class PlayerStatus : MonoBehaviour
 
     public enum Status{
         ground,
-        jump,
-        gap
+        jump
     }
 
+    public enum SharedStatus{
+        aligned,
+        gap
+    }
     
     private Status currentStatus;
 
