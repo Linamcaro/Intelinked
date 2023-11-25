@@ -25,7 +25,7 @@ public class LevelManager : MonoBehaviour
     }
 
     // Load level by index
-    public void LoadNextLevel()
+    private void NextLevel()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
@@ -39,5 +39,10 @@ public class LevelManager : MonoBehaviour
             Debug.Log("No more levels available.");
         }
 
+    }
+
+    public void LoadNextLevel()
+    {
+        NextLevel();
     }
 }

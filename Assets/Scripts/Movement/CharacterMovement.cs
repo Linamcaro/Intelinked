@@ -55,12 +55,12 @@ public class CharacterMovement : MonoBehaviour
         Vector2 movementInput = playerInput.PlayerMain.Movement.ReadValue<Vector2>();
         float dirX= movementInput.x;
         
-        if(dirX!=0){
-            Debug.Log(playerRB.velocity);
-            Vector2 movementStepX = new Vector2(dirX * speed,playerRB.velocity.y);
-            playerRB.velocity = movementStepX;
-            Debug.Log(playerRB.velocity);
+        if(dirX == 0){
+            dirX = 0; 
         }
+
+        Vector2 movementStepX = new Vector2(dirX * speed, playerRB.velocity.y);
+        playerRB.velocity = movementStepX;
     }
 
     private void Jump(){
@@ -70,7 +70,6 @@ public class CharacterMovement : MonoBehaviour
             playerRB.velocity = new Vector2(playerRB.velocity.x,0f);
             playerRB.AddForce(new Vector2(0,force), ForceMode2D.Impulse);
             status.setStatus(PlayerStatus.Status.jump);
-
         }
     }
 
@@ -79,7 +78,6 @@ public class CharacterMovement : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col){
 
         String colTag = col.collider.tag;
-        Debug.Log("");
 
         if (colTag == "ground"){
             status.setStatus(PlayerStatus.Status.ground);
