@@ -7,7 +7,8 @@ public class PlayerStatus : MonoBehaviour
 
     public enum Status{
         ground,
-        jump
+        jump, 
+        air
     }
 
     public enum SharedStatus{
