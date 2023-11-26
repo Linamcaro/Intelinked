@@ -13,6 +13,9 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField]
     private float speed;
     [SerializeField]
+    private int gravityDir;
+
+    [SerializeField]
     private int force;
     private Rigidbody2D playerRB;
     private PlayerStatus status;
@@ -87,7 +90,7 @@ public class CharacterMovement : MonoBehaviour
     /// If player the velocity of player is < 0 that means it is falling, so status changes to <b>air</b>
     /// </summary>
     private void CheckAir(){
-        if(playerRB.velocity.y<0){
+        if(playerRB.velocity.y*gravityDir<0){
             status.setStatus(PlayerStatus.Status.air);
         }
     }

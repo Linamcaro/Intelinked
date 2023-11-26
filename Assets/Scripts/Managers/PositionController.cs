@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class PositionController : MonoBehaviour
 {
+
+    [SerializeField]
+    Transform charUp;
+    [SerializeField]
+    Transform charDown;
+
+    PlayerStatus status;
     // Start is called before the first frame update
     void Start()
     {
+        
         
     }
 
