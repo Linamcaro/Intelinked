@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf2c0491a093bc5408c051a61ad69ab3, type: 3}
+  m_Name: SoundsSO
+  m_EditorClassIdentifier: 
+  jump: {fileID: 8300000, guid: 10c0949cb0c1cb74fa3b050facfe2827, type: 3}
+  timer: {fileID: 8300000, guid: 2f47f9c75db6c184fbacec8510c68bfb, type: 3}
+  death: {fileID: 8300000, guid: aff00ebeb3fbf3149a876f1e4a8028b3, type: 3}
+  playerAlignment: {fileID: 8300000, guid: e3b7ac0fa416fb14d8bf971cf0bb89f1, type: 3}

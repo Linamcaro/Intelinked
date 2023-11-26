@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class LevelManager : MonoBehaviour
 {
     private static LevelManager _instance;
@@ -17,12 +18,17 @@ public class LevelManager : MonoBehaviour
         if (_instance != null)
         {
             Destroy(gameObject);
+            DontDestroyOnLoad(this);
         }
         else
         {
             _instance = this;
         }
+
+        MusicManager.Instance.PlayGameMusic(false);
+
     }
+
 
     // Load level by index
     private void NextLevel()
