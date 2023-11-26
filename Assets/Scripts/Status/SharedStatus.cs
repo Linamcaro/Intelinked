@@ -9,7 +9,8 @@ public class SharedStatus : MonoBehaviour
 
     public enum Status{
         aligned,
-        gap
+        gap,
+        death
     }
 
     private Status currentStatus;
