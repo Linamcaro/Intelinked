@@ -11,6 +11,8 @@ public class TimeManager : MonoBehaviour
     TextMeshPro timerDown;
     SharedStatus positionControllerStatus;
     float timer = 20.0f;
+    DeathController livesController;
+
     // Start is called before the first frame update
     /// <summary>
     /// Gets both timers'(objects) textmeshpro component <br/>
@@ -21,6 +23,7 @@ public class TimeManager : MonoBehaviour
         timerUp = GameObject.FindGameObjectWithTag("TimerUp").GetComponent<TextMeshPro>();
         timerDown = GameObject.FindGameObjectWithTag("TimerDown").GetComponent<TextMeshPro>();
         positionControllerStatus = GameObject.FindGameObjectWithTag("PositionController").GetComponent<SharedStatus>();
+        livesController = GameObject.FindGameObjectWithTag("DeathController").GetComponent<DeathController>();
     }
 
     // FixedUpdate is called once every 0.02 seconds
@@ -78,7 +81,8 @@ public class TimeManager : MonoBehaviour
         if (timer<=0){
             timerUp.text = "";
             timerDown.text = "";
-            positionControllerStatus.setStatus(SharedStatus.Status.death);
+            livesController.DecreaseLives();
+            // Time.timeScale = 0;
         }
     }
 }

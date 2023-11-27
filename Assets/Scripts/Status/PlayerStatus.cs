@@ -8,7 +8,7 @@ public class PlayerStatus : MonoBehaviour
     public enum Status{
         ground,
         jump,
-        gap
+        air
     }
 
     

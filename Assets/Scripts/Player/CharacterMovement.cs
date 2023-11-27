@@ -15,6 +15,9 @@ public class CharacterMovement : MonoBehaviour
     private float speed;
     [SerializeField]
     private int force;
+
+    [SerializeField]
+    private int gravityDir;
     private Rigidbody2D playerRB;
     private PlayerStatus status;
     private PlayerInputs playerInput;
@@ -54,6 +57,7 @@ public class CharacterMovement : MonoBehaviour
     }
 
     void Update(){
+        CheckAir();
         Jump();
     }
 
@@ -86,13 +90,24 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
+    private void CheckAir(){
+        if(playerRB.velocity.y<0){
+            if(playerRB.velocity.y*gravityDir<0){
+                status.setStatus(PlayerStatus.Status.air);
+            }
+        }
+    }
+
 
 
     void OnCollisionEnter2D(Collision2D col){
 
         String colTag = col.collider.tag;
 
-        if (colTag == "ground"){
+        Vector2 normal = col.GetContact(0).normal;
+
+        
+        if (colTag == "ground" && normal.y!=0){
             status.setStatus(PlayerStatus.Status.ground);
         }
     }

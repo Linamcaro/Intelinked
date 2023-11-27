@@ -12,6 +12,8 @@ TagManager:
   - TimerUp
   - TimerDown
   - JoyStick
+  - DeathController
+  - Kill
   layers:
   - Default
   - TransparentFX

@@ -1,0 +1,2 @@
+{"Game":
+ {"GameManager": {"deathStatus":{"type":"DeathController"},"CheckStatus": {"Type":"Void", "Function":"Checks if status is death or alive"}}}}
