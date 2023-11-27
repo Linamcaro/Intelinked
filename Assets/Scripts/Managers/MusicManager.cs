@@ -33,7 +33,6 @@ public class MusicManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        PlayGameMusic(true);
     }
 
     //-----------------------------------------------------------------------------------------------------------
@@ -64,16 +63,14 @@ public class MusicManager : MonoBehaviour
 
     public void PlayMenuMusic(bool restart)
     {
-        PlayTrack(menuMusic, true, false);
+        PlayTrack(menuMusic, true, restart);
     }
 
     //-----------------------------------------------------------------------------------------------------------
 
     public void PlayGameMusic(bool restart)
     {
-        PlayTrack(gameMusic, true, false);
+        PlayTrack(gameMusic, true, restart);
     }
-
-   
 
 }
