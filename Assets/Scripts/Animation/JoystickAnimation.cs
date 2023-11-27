@@ -44,7 +44,12 @@ public class JoystickAnimation : MonoBehaviour
     {
         ChangeSprite();
     }
-
+    /// <summary>
+    /// takes the value of the joystick input and if:
+    /// value in x is more than 0, changes sprite to right button
+    /// value in x is lower than 0, changes sprit to left button
+    /// value in x is 0, changes sprite to regular button
+    /// </summary>
     private void ChangeSprite(){
         Vector2 inputDir = playerInput.PlayerMain.Movement.ReadValue<Vector2>();
 

@@ -10,6 +10,7 @@ using UnityEngine.InputSystem;
 
 public class CharacterMovement : MonoBehaviour
 {
+    
     [SerializeField]
     private float speed;
     [SerializeField]
