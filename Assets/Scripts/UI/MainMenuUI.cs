@@ -7,7 +7,7 @@ public class MainMenuUI : MonoBehaviour
 {
     private void Awake()
     {
-        MusicManager.Instance.PlayGameMusic(true); 
+        MusicManager.Instance.PlayMenuMusic(true); 
     }
     public void PlayButton()
     {
