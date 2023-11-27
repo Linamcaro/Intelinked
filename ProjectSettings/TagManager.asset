@@ -8,6 +8,9 @@ TagManager:
   - PlayerTop
   - PlayerDown
   - VirtualCamera1
+  - PositionController
+  - TimerUp
+  - TimerDown
   layers:
   - Default
   - TransparentFX

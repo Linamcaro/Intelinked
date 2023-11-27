@@ -2,15 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStatus : MonoBehaviour
+public class SharedStatus : MonoBehaviour
 {
 
+
+
     public enum Status{
-        ground,
-        jump, 
-        air
+        aligned,
+        gap,
+        death
     }
-    
+
     private Status currentStatus;
 
     ///<summary>
@@ -30,8 +32,6 @@ public class PlayerStatus : MonoBehaviour
     public Status getStatus(){
         return currentStatus;
     }
-
-
     // // Start is called before the first frame update
     // void Start()
     // {
