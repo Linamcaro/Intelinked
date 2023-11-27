@@ -11,6 +11,7 @@ TagManager:
   - PositionController
   - TimerUp
   - TimerDown
+  - JoyStick
   layers:
   - Default
   - TransparentFX
