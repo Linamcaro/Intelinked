@@ -35,6 +35,7 @@ public class PositionController : MonoBehaviour
         CheckPos();
     }
 
+
     /// <summary>
     /// gets the position of both characters and compares them<br/>
     /// if they don't share the same X position with a tolerance of <b>+-0.005</b><br/>

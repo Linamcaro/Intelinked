@@ -14,6 +14,7 @@ public class PlayerSound : MonoBehaviour
         player = GetComponent<CharacterMovement>();
     }
 
+
     // Update is called once per frame
     void Update()
     {

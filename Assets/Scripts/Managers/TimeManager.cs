@@ -49,6 +49,7 @@ public class TimeManager : MonoBehaviour
         }
     }
 
+
     /// <summary>
     /// if timer is 20 to 15 (not inclusive) show it with color green<br/>
     /// if timer is between 15 and 5 (not inclusive) show it yellow<br/>

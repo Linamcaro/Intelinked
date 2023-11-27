@@ -15,6 +15,7 @@ public class SharedStatus : MonoBehaviour
 
     private Status currentStatus;
 
+
     ///<summary>
     ///Description: Public function to <b>SET</b> the player status to <paramref name="newStatus"/> provided as parameter <br/>
     ///Input: <paramref name="newStatus"/><br/>
