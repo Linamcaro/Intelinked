@@ -1567,8 +1567,11 @@ MeshRenderer:
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> Develop
 >>>>>>> parent of 4f248ba (Revert "update with develop")
+=======
+>>>>>>> parent of a875c1a (new Joystick)
 =======
 >>>>>>> parent of a875c1a (new Joystick)
 --- !u!4 &1598081591 stripped
