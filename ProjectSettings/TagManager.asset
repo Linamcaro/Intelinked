@@ -8,6 +8,10 @@ TagManager:
   - PlayerTop
   - PlayerDown
   - VirtualCamera1
+  - PositionController
+  - TimerUp
+  - TimerDown
+  - JoyStick
   layers:
   - Default
   - TransparentFX
