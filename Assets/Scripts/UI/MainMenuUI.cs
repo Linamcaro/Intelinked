@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuUI : MonoBehaviour
 {
-    private void Awake()
+    private void Start()
     {
-        MusicManager.Instance.PlayMenuMusic(true); 
+        MusicManager.Instance.PlayMenuMusic(false); 
     }
     public void PlayButton()
     {
