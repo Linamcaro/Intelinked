@@ -25,8 +25,6 @@ public class LevelManager : MonoBehaviour
             _instance = this;
         }
 
-        MusicManager.Instance.PlayGameMusic(false);
-
     }
 
 
@@ -36,7 +34,7 @@ public class LevelManager : MonoBehaviour
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
 
-        if (currentSceneIndex < SceneManager.sceneCountInBuildSettings)
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
         {
             SceneManager.LoadScene(nextSceneIndex);
         }
