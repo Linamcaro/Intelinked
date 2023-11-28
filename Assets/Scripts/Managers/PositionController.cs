@@ -46,7 +46,7 @@ public class PositionController : MonoBehaviour
     private void CheckPos(){
         Vector3 positionDown = charDown.position;
         Vector3 positionUp = charUp.position;
-        if (positionUp.x<positionDown.x-0.005 || positionUp.x > positionDown.x + 0.005){
+        if (positionUp.x<positionDown.x-0.02 || positionUp.x > positionDown.x + 0.02){
             charactersStatus.setStatus(SharedStatus.Status.gap);
         }
         else{
