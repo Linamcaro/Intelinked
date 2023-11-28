@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class TimeManager : MonoBehaviour
 {
+    [SerializeField]
     TextMeshProUGUI timerTxt;
     SharedStatus positionControllerStatus;
     float timer = 20.0f;
@@ -18,7 +19,7 @@ public class TimeManager : MonoBehaviour
     /// </summary>
     void Start()
     {
-        timerTxt = GameObject.FindGameObjectWithTag("Timer").GetComponent<TextMeshProUGUI>();
+        // timerTxt = GameObject.FindGameObjectWithTag("Timer").GetComponent<TextMeshProUGUI>();
         positionControllerStatus = GameObject.FindGameObjectWithTag("PositionController").GetComponent<SharedStatus>();
         livesController = GameObject.FindGameObjectWithTag("DeathController").GetComponent<DeathController>();
     }
