@@ -2056,7 +2056,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2285017587508958561, guid: 51f10fa6ad5b4844492ece1bd943e420, type: 3}
       propertyPath: m_Name
-      value: Capsule
+      value: Player1
       objectReference: {fileID: 0}
     - target: {fileID: 3418726244161276440, guid: 51f10fa6ad5b4844492ece1bd943e420, type: 3}
       propertyPath: gravityDir
@@ -2628,7 +2628,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4964071998921382318, guid: 1c63dd2627fcc0d418f651ed9786e478, type: 3}
       propertyPath: m_Name
-      value: Capsule (1)
+      value: Player2
       objectReference: {fileID: 0}
     - target: {fileID: 6922903936037222087, guid: 1c63dd2627fcc0d418f651ed9786e478, type: 3}
       propertyPath: m_LocalScale.x
