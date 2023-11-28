@@ -7,6 +7,11 @@ public class GameManager : MonoBehaviour
 
     DeathController gameStatus;
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+    }
     void Start()
     {
         gameStatus = GameObject.FindGameObjectWithTag("DeathController").GetComponent<DeathController>();

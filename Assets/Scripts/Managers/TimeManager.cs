@@ -12,7 +12,10 @@ public class TimeManager : MonoBehaviour
     float timer = 20.0f;
     DeathController livesController;
 
-    // Start is called before the first frame update
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+    }
     /// <summary>
     /// Gets both timers'(objects) textmeshpro component <br/>
     /// Gets positioncontroller game object's sharedStatus component.
