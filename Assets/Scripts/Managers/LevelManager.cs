@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+
     private static LevelManager _instance;
     public static LevelManager Instance
     {
@@ -40,6 +41,8 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
+            TheEnd.Instance.Show();
+
             Debug.Log("No more levels available.");
         }
 
