@@ -11,7 +11,7 @@ public class PositionController : MonoBehaviour
     Transform charDown;
     [SerializeField]
     DeathController liveChanged;
-    Vector3 startPos = new Vector3(-12.2f, 1.6f, 0);
+    Vector3 startPos = new Vector3(-12.2f, 1.5f, 0);
 
     SharedStatus charactersStatus;
     // Start is called before the first frame update
@@ -58,6 +58,6 @@ public class PositionController : MonoBehaviour
         charUp.position = startPos;
         startPos.y *=-1;
         charDown.position = startPos;
-        startPos *=-1;
+        startPos.y *=-1;
     }
 }

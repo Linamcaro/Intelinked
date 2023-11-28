@@ -18,6 +18,8 @@ public class CharacterMovement : MonoBehaviour
 
     [SerializeField]
     private int gravityDir;
+    [SerializeField]
+    private int rotationx;
     private Rigidbody2D playerRB;
     private PlayerStatus status;
     private PlayerInputs playerInput;
@@ -59,6 +61,8 @@ public class CharacterMovement : MonoBehaviour
     void Update(){
         CheckAir();
         Jump();
+
+        Debug.Log(isJumping);
     }
 
     private void Movement(){
@@ -68,11 +72,22 @@ public class CharacterMovement : MonoBehaviour
         if(dirX == 0){
             dirX = 0;
             isWalking = false;
+            playerRB.velocity = new Vector2(0, playerRB.velocity.y);
+        }
+        else{
+            Vector3 scale = gameObject.transform.localScale;
+            if (dirX<0){
+                gameObject.transform.localEulerAngles =  new Vector3(rotationx,180,0);
+            }
+            else{
+                gameObject.transform.localEulerAngles = new Vector3(rotationx,0,0);
+            }
+            Vector2 movementStepX = new Vector2(dirX * speed, playerRB.velocity.y);
+            playerRB.velocity = movementStepX;
+            isWalking = true;
         }
 
-        Vector2 movementStepX = new Vector2(dirX * speed, playerRB.velocity.y);
-        playerRB.velocity = movementStepX;
-        isWalking = true;
+        
     }
 
     private void Jump(){
@@ -83,10 +98,6 @@ public class CharacterMovement : MonoBehaviour
             playerRB.AddForce(new Vector2(0,force), ForceMode2D.Impulse);
             status.setStatus(PlayerStatus.Status.jump);
             isJumping = true;
-        }
-        else
-        {
-            isJumping = false;
         }
     }
 
@@ -109,6 +120,7 @@ public class CharacterMovement : MonoBehaviour
         
         if (colTag == "ground" && normal.y!=0){
             status.setStatus(PlayerStatus.Status.ground);
+            isJumping = false;
         }
     }
 

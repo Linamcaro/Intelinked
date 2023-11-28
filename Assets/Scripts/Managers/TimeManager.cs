@@ -6,9 +6,7 @@ using UnityEngine.UI;
 
 public class TimeManager : MonoBehaviour
 {
-
-    TextMeshPro timerUp;
-    TextMeshPro timerDown;
+    TextMeshProUGUI timerTxt;
     SharedStatus positionControllerStatus;
     float timer = 20.0f;
     DeathController livesController;
@@ -20,8 +18,7 @@ public class TimeManager : MonoBehaviour
     /// </summary>
     void Start()
     {
-        timerUp = GameObject.FindGameObjectWithTag("TimerUp").GetComponent<TextMeshPro>();
-        timerDown = GameObject.FindGameObjectWithTag("TimerDown").GetComponent<TextMeshPro>();
+        timerTxt = GameObject.FindGameObjectWithTag("Timer").GetComponent<TextMeshProUGUI>();
         positionControllerStatus = GameObject.FindGameObjectWithTag("PositionController").GetComponent<SharedStatus>();
         livesController = GameObject.FindGameObjectWithTag("DeathController").GetComponent<DeathController>();
     }
@@ -30,7 +27,6 @@ public class TimeManager : MonoBehaviour
     void FixedUpdate()
     {
         StatusToDeath();
-        ColorControl();
         Counter();
     }
 
@@ -40,14 +36,13 @@ public class TimeManager : MonoBehaviour
     /// </summary>
     private void Counter(){
         if (positionControllerStatus.getStatus() == SharedStatus.Status.gap){
-            timerUp.text = timer.ToString("0.0");
-            timerDown.text = timer.ToString("0.0");
+            ColorControl();
+            timerTxt.text = timer.ToString("0.0");
             timer-= Time.fixedDeltaTime;
         }
 
         else{
-            timerUp.text = "";
-            timerDown.text = "";
+            timerTxt.text = "";
             timer = 20.0f;
         }
     }
@@ -60,17 +55,14 @@ public class TimeManager : MonoBehaviour
     /// </summary>
     private void ColorControl(){
         if(timer.ToString("0.0") =="20.0"){
-            timerUp.color=Color.green;
-            timerDown.color=Color.green;
+            timerTxt.color = Color.green;
 
         }
         else if(timer.ToString("0.0") =="15.0"){
-            timerUp.color = Color.yellow;
-            timerDown.color=Color.yellow;
+            timerTxt.color = Color.yellow;
         }
         else if(timer.ToString("0.0") =="5.0"){
-            timerUp.color = Color.red;
-            timerDown.color=Color.red;
+            timerTxt.color = Color.red;
         }
     }
 
@@ -79,8 +71,7 @@ public class TimeManager : MonoBehaviour
     /// </summary>
     private void StatusToDeath(){
         if (timer<=0){
-            timerUp.text = "";
-            timerDown.text = "";
+            timerTxt.text = "";
             livesController.DecreaseLives();
             // Time.timeScale = 0;
         }
